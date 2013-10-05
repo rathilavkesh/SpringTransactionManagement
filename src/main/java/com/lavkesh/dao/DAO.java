@@ -9,7 +9,7 @@ public interface DAO<T> {
 	T findById(Serializable id);
 	<E> E findById(Serializable id, Class<E> obj);
 	
-	<E> E save(T t, Class<E> obj);
+	void  saveOrUpdate(Object t) ;
     
     void delete(Object t);
     

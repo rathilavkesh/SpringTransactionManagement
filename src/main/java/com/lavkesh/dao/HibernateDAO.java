@@ -9,10 +9,12 @@ import java.util.Map;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 
 @SuppressWarnings("unchecked")
 public abstract class HibernateDAO<T> implements DAO<T> {
 
+	@Autowired
 	private SessionFactory sessionFactory;
 
 	private Class<T> type;
@@ -36,9 +38,9 @@ public abstract class HibernateDAO<T> implements DAO<T> {
 	}
 
 	@Override
-	public <E> E save(T t, Class<E> obj) {
+	public void  saveOrUpdate(Object t) {
 		Session session = this.sessionFactory.getCurrentSession();
-		return (E) session.save(t);
+		session.saveOrUpdate(t);
 	}
 
 	@Override
