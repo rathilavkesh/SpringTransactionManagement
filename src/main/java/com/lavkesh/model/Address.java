@@ -1,5 +1,7 @@
 package com.lavkesh.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -35,6 +37,7 @@ public class Address {
 
 	@ManyToOne
 	@JoinColumn(name = "STUDENT_ID")
+	@JsonIgnore
 	private Student student;
 
 	public Long getAddressId() {

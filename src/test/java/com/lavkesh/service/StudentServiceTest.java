@@ -28,7 +28,7 @@ public class StudentServiceTest {
 	public void testCreateStudent(){
 		Student student = new Student();
 		student.setFirstName("Lavkesh");
-		student.setLasttName("Rathi");
+		student.setLastName("Rathi");
 		
 		Address address = new Address();
 		address.setAddress1("Test Address 1");

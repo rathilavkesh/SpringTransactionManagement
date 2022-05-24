@@ -22,7 +22,7 @@ public class Student {
 	private String firstName;
 	
 	@Column(name="LAST_NAME")
-	private String lasttName;
+	private String lastName;
 	
 	@OneToMany(mappedBy="student")
 	private List<Address> addressList;
@@ -43,12 +43,12 @@ public class Student {
 		this.firstName = firstName;
 	}
 
-	public String getLasttName() {
-		return lasttName;
+	public String getLastName() {
+		return lastName;
 	}
 
-	public void setLasttName(String lasttName) {
-		this.lasttName = lasttName;
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
 
 	public List<Address> getAddressList() {
