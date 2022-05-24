@@ -1,6 +1,5 @@
 package com.lavkesh.model;
 
-import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -12,12 +11,12 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "PERSON")
-public class Person {
+@Table(name = "STUDENT")
+public class Student {
 
 	@Id @GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name="ID")
-	private Long personId;
+	@Column(name="STUDENT_ID")
+	private Long studentId;
 	
 	@Column(name="FIRST_NAME")
 	private String firstName;
@@ -25,18 +24,15 @@ public class Person {
 	@Column(name="LAST_NAME")
 	private String lasttName;
 	
-	@Column(name="DATE_OF_BIRTH")
-	private Date dob;
-	
-	@OneToMany(mappedBy="person")
+	@OneToMany(mappedBy="student")
 	private List<Address> addressList;
 
-	public Long getPersonId() {
-		return personId;
+	public Long getStudentId() {
+		return studentId;
 	}
 
-	public void setPersonId(Long personId) {
-		this.personId = personId;
+	public void setStudentId(Long studentId) {
+		this.studentId = studentId;
 	}
 
 	public String getFirstName() {
@@ -55,14 +51,6 @@ public class Person {
 		this.lasttName = lasttName;
 	}
 
-	public Date getDob() {
-		return dob;
-	}
-
-	public void setDob(Date dob) {
-		this.dob = dob;
-	}
-
 	public List<Address> getAddressList() {
 		return addressList;
 	}
@@ -73,9 +61,9 @@ public class Person {
 	
 	@Override
 	public boolean equals(Object obj) {
-		if(obj != null && obj instanceof Person){
-			Person person = (Person)obj;
-			return (person.getPersonId() == this.getPersonId());
+		if(obj != null && obj instanceof Student){
+			Student student = (Student)obj;
+			return (student.getStudentId() == this.getStudentId());
 		}
 		return false;
 	}

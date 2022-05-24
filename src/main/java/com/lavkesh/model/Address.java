@@ -34,8 +34,8 @@ public class Address {
 	private String country;
 
 	@ManyToOne
-	@JoinColumn(name = "PERSON_ID")
-	private Person person;
+	@JoinColumn(name = "STUDENT_ID")
+	private Student student;
 
 	public Long getAddressId() {
 		return addressId;
@@ -85,14 +85,14 @@ public class Address {
 		this.country = country;
 	}
 
-	public Person getPerson() {
-		return person;
+	public Student getStudent() {
+		return student;
 	}
 
-	public void setPerson(Person person) {
-		this.person = person;
+	public void setStudent(Student student) {
+		this.student = student;
 	}
-	
+
 	@Override
 	public boolean equals(Object obj) {
 		if(obj != null && obj instanceof Address){
