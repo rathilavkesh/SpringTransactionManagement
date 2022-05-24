@@ -6,5 +6,11 @@ In this example, we will discribe you how to used spring transaction management.
 We used below tools:
 
 Maven
-Spring
+Spring Boot
 Hibernate
+HSQLDB
+
+
+You can go through below article to get more information about this repo.
+
+https://lavkeshrathi.blogspot.com/2022/05/spring-boot-transaction-management.html
